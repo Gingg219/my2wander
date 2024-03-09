@@ -9,3 +9,11 @@ function showToastFail(data) {
     $('#contentFail').text(data.message);
     $('#toastFail').toast('show');
 }
+
+function printErrorMsg(msg) {
+    $(".print-error-msg").html('');
+    $(".print-error-msg").css('display', 'block');
+    $.each(msg, function(key, value) {
+        $("#" + key).text(value[0]);
+    });
+}
