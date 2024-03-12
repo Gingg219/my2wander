@@ -164,10 +164,13 @@
                 </a>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="#" class="dropdown-item notify-item" id="logoutLink">
                     <i class="mdi mdi-logout mr-1"></i>
                     <span>Logout</span>
                 </a>
+                <form id="logoutForm" action="{{ route('logOut') }}" method="POST" style="display: none;">
+                    @csrf 
+                </form>
 
             </div>
         </li>

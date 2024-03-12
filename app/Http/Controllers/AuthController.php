@@ -24,20 +24,22 @@ class AuthController extends Controller
     }
 
     public function loginHandle(LoginRequest $request) {
-        $email = $request->input('email');
-        $password = $request->input('password');
-        
-        if (!Auth::attempt(['email' => $email, 'password' => $password])) {
+        $credentials = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        ];
+        if (Auth::attempt($credentials)) {
             return response()->json([
-                'status'  => config('constants.CODE_STATUS.FAIL'),
-                'title'   => 'Post',
-                'message' => 'Create new post FAIL',
+                'status'  => config('constants.CODE_STATUS.SUCCESS'),
+                'title'   => 'LOGIN',
+                'message' => 'Welcome to my home',
             ]);
         }
+        
         return response()->json([
-            'status'  => config('constants.CODE_STATUS.SUCCESS'),
+            'status'  => config('constants.CODE_STATUS.FAIL'),
             'title'   => 'LOGIN',
-            'message' => 'Create new post SUCCESSFULLY',
+            'message' => 'Login FAIL',
         ]);
     }
     public function  callback($provider)
@@ -85,4 +87,10 @@ class AuthController extends Controller
     //     }
     //     return response()->json(['data' => "Đăng ký thành công"], 200);
     // }
+
+    public function logOut()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
