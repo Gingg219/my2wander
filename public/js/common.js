@@ -17,3 +17,8 @@ function printErrorMsg(msg) {
         $("#" + key).text(value[0]);
     });
 }
+
+document.getElementById('logoutLink').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    document.getElementById('logoutForm').submit();
+});

@@ -84,7 +84,7 @@
 
                     <!-- Footer-->
                     <footer class="footer footer-alt">
-                        <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-muted ml-1"><b>Sign Up</b></a></p>
+                        {{-- <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-muted ml-1"><b>Sign Up</b></a></p> --}}
                     </footer>
 
                 </div> <!-- end .card-body -->
@@ -127,11 +127,14 @@
                     data: data,
                     dataType: "json",
                     success: function(data) {
-                        if (data.status == 200) {
+                        if (data.status == {{ config('constants.CODE_STATUS.SUCCESS') }}) {
+                            console.log(11111);
                             $.NotificationApp.send(data.titile, data.message, "top-right", "#9EC600", "success");
                             window.location.href = "{{ route('admin.welcome') }}";
                         }
-                        $.NotificationApp.send(data.titile, data.message, "top-right", "#9EC600", "error");
+                        else{
+                            $.NotificationApp.send(data.titile, data.message, "top-right", "#9EC600", "error");
+                        }
                     },
                     error: function(data){
                         printErrorMsg(data.responseJSON.errors);
