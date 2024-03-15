@@ -76,7 +76,7 @@
     $(document).ready(function () {
        
         $('#summernote').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: 'Hello Gingg',
             tabsize: 2,
             height: 300,
             callbacks: {
@@ -126,7 +126,7 @@
                 data: formData,
                 dataType: "json",
                 success: function (data) {
-                    if(data && data['status'] == 200){
+                    if(data && data['status'] == {{ config('constants.CODE_STATUS.SUCCESS') }}){
                         showToastSuccess(data);
                         location.reload();
                     }else {

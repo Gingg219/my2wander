@@ -128,7 +128,6 @@
                     dataType: "json",
                     success: function(data) {
                         if (data.status == {{ config('constants.CODE_STATUS.SUCCESS') }}) {
-                            console.log(11111);
                             $.NotificationApp.send(data.titile, data.message, "top-right", "#9EC600", "success");
                             window.location.href = "{{ route('admin.welcome') }}";
                         }

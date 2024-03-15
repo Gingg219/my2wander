@@ -24,7 +24,7 @@
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="{{ asset('images/flags/vietnam.jpg') }}" alt="user-image" class="mr-1"
+                    <img src="{{ asset('images/flags/vietnam.png') }}" alt="user-image" class="mr-1"
                         height="12"> <span class="align-middle">Vietnamese</span>
                 </a>
             </div>
@@ -152,7 +152,7 @@
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{ route('admin.users.index') }}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-circle mr-1"></i>
                     <span>My Account</span>
                 </a>

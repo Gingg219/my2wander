@@ -85,7 +85,7 @@
                     for (var i = 0; i < files.length; i++) {
                         imageFiles.push(files[i]);
                     }
-                    
+
                     for (var i = 0; i < files.length; i++) {
                         var reader = new FileReader();
                         reader.onloadend = function () {
@@ -152,7 +152,7 @@
                         data: data,
                         dataType: "json",
                         success: function (data) {
-                            if(data && data['status'] == 200){
+                            if(data && data['status'] == {{ config('constants.CODE_STATUS.SUCCESS') }}){
                                 // showToastSuccess(data);
                                 $.NotificationApp.send(data.titile, data.message, "top-right", "#9EC600", "info");
                                 $('html, body').animate({ scrollTop: 0 }, 'slow');

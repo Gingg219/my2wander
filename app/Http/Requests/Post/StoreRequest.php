@@ -48,13 +48,10 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => [
-                'required' => ':attributes Ohai dion vao chu bro',
+                'required' => ':attributes must be fill',
             ],
-            // 'parent_id' => [
-            //     'required' => ':attributes Ohai dion vao chuaaa bro',
-            // ],
-            'required' => ':attribute phai dien vao chu bro',
-            'string' => ':attribute phai dien chuoi chu bro',
+            'required' => ':attribute must be fill',
+            'string' => ':attribute must be a character',
         ];
     }
     public function attributes()

@@ -10,6 +10,13 @@ Route::middleware('auth.admin')->group(function () {
         return view('admin.layout.master');
     })->name('welcome');
 
+    Route::controller(AdminUserController::class)->name('users.')->prefix('users') ->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::post('/store', 'store')->name('store');
+        Route::post('/change_password', 'changePassword')->name('change_password');
+        Route::get('/{user}/show', 'show')->name('show');
+    });
+
     Route::controller(AdminPostController::class)->name('posts.')->prefix('posts') ->group(function(){
         Route::get('/', 'index')->name('index');
         Route::post('/upload/image', 'uploadImage')->name('upload_image');
