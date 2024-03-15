@@ -21,13 +21,13 @@
                     <label for="switchStatus{{ $post->id }}" data-on-label="On" data-off-label="Off" data-toggle="modal" data-target="#confirmPublish"></label>
                 </td>
                 <td class="table-action" style="">
-                    <div data-toggle="modal" data-target="#exampleModal" class="action-preview" style="cursor: pointer" id="btnPreviewPost"
+                    <a class="action-icon" data-toggle="modal" data-target="#exampleModal" class="action-preview" style="cursor: pointer" id="btnPreviewPost"
                     data-url="{{ route('admin.posts.show', ['post_id' => $post->id]) }}"
                     data-edit="{{ route('admin.posts.edit', ['post_id' => $post->id]) }}"
                     data-id="{{ $post->id }}"
                     onclick="getData({{ $post->id }})">
                         <i class="mdi mdi-eye"></i>
-                    </div>
+                    </a>
                     <a href="{{ route('admin.posts.edit', ['post_id' => $post->id]) }}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                 </td>

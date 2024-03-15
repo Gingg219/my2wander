@@ -3,11 +3,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
-use App\Models\Category;
-use App\Models\CategoryPost;
 use App\Models\Post;
-use App\Models\PostTag;
-use App\Models\Tag;
 use App\Services\Contracts\CategoryServiceInterface;
 use App\Services\Contracts\PostServiceInterface;
 use App\Services\Contracts\TagServiceInterface;
@@ -36,7 +32,6 @@ class PostController extends Controller
 
     )
     {   
-        $this->model = Post::query();
         $this->table =(new Post())->getTable();
         $this->postService = $postService;
         $this->tagService = $tagService;
