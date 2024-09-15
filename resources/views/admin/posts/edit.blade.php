@@ -93,7 +93,7 @@
                         formData.append('images[]', files[i]);
                     }
                     $.ajax({
-                        url: "{{ route('admin.posts.upload_image') }}", // Đường dẫn tới phương thức xử lý tải ảnh trên máy chủ
+                        url: "{{ route('admin.posts.upload_image') }}",
                         method: 'POST',
                         data: formData,
                         processData: false,
@@ -120,6 +120,7 @@
             e.preventDefault();
             var markupStr = $('#summernote').summernote('code');
             formData = $('#create-table').serialize();
+            console.log[formData];
             $.ajax({
                 type: "POST",
                 url: "{{ route('admin.posts.store') }}",
@@ -128,7 +129,7 @@
                 success: function (data) {
                     if(data && data['status'] == {{ config('constants.CODE_STATUS.SUCCESS') }}){
                         showToastSuccess(data);
-                        location.reload();
+                        // location.reload();
                     }else {
                         showToastFail(data);
                     }

@@ -13,6 +13,8 @@ Route::middleware('guest:web')->group(function () {
     })->name('auth.redirect');
      
     Route::get('/auth/callback/{provider}', [AuthController::class, 'callback'] );
+    
+    Route::get('/',[HomeController::class, 'index'] )->name('index');
 });
 
 Route::middleware('auth:web')->group(function () {

@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="userpassword">Password</label>
                         <input type="password" class="form-control" disabled value="kocogidaumaxem" id="userpassword" placeholder="Enter password">
-                        <span class="form-text text-muted"><small>If you want to change password please <a data-toggle="modal" data-target="#change-password-modal" href="#">click</a> here.</small></span>
+                        <span class="form-text text-muted"><small>If you want to change password please click <a data-toggle="modal" data-target="#change-password-modal" href="#">here.</a></small></span>
                     </div>
                 </div> <!-- end col -->
             </div> <!-- end row -->

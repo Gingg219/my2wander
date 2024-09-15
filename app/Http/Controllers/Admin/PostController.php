@@ -48,7 +48,7 @@ class PostController extends Controller
             'search' => @$data['search'],
             'status' => @$data['status'],
         ];
-        // Get Post book
+        // Get Post
         $posts = $this->postService->index($filter);
 
         if ((@$data['search'] || @$data['status'])) {        
@@ -70,7 +70,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $posts=$this->model->select('id','title')->get();
+        $posts=$this->postService->getAll();
         $categories = $this->categoryService->getAll();
         $tags = $this->tagService->getAll();
         return view("admin.$this->table.create",compact(

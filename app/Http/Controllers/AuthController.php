@@ -39,7 +39,7 @@ class AuthController extends Controller
         return response()->json([
             'status'  => config('constants.CODE_STATUS.FAIL'),
             'title'   => 'LOGIN',
-            'message' => 'Login FAIL',
+            'message' => 'Login fail',
         ]);
     }
     public function  callback($provider)
